@@ -35,6 +35,7 @@ public class ManagerViewFrame extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jButton1.setText("Wyloguj");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

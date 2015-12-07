@@ -1,6 +1,9 @@
 
 package pjatk.byt.sms.frame;
 
+import pjatk.byt.sms.db.dao.UserDao;
+import pjatk.byt.sms.db.model.User;
+
 
 public class LoginFrame extends javax.swing.JFrame {
 
@@ -19,8 +22,10 @@ public class LoginFrame extends javax.swing.JFrame {
         passwordLabel = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
         passwordInput = new javax.swing.JPasswordField();
+        errorLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         usernameInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -39,24 +44,36 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
 
+        passwordInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordInputActionPerformed(evt);
+            }
+        });
+
+        errorLabel.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(153, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(passwordLabel)
-                    .addComponent(usernameLabel)
-                    .addComponent(usernameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                    .addComponent(loginButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(passwordInput))
+                .addContainerGap(114, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(passwordLabel)
+                        .addComponent(usernameLabel)
+                        .addComponent(usernameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                        .addComponent(loginButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(passwordInput))
+                    .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(153, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(140, Short.MAX_VALUE)
+                .addContainerGap(116, Short.MAX_VALUE)
+                .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(usernameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -80,17 +97,24 @@ public class LoginFrame extends javax.swing.JFrame {
         String username = usernameInput.getText();
         String password = new String(passwordInput.getPassword());
         
-        if (username.equals("admin") && password.equals("admin")) {
+        UserDao userDao = new UserDao();
+        User user = userDao.findByUserAndPassword(username, password);
+        
+        if (user != null) {
             System.out.println("Zalogowany jako administrator.");
+            setVisible(false);
+            new ManagerViewFrame().setVisible(true);
         } else {
             System.out.println("Użytkownik nieznany. Skontaktuj się z administratorem.");
+            errorLabel.setText("Błędny login lub hasło.");
         }
             
     }//GEN-LAST:event_loginButtonActionPerformed
+/*logowanie przez enter*/
+    private void passwordInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputActionPerformed
+        loginButtonActionPerformed(evt);
+    }//GEN-LAST:event_passwordInputActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -124,6 +148,7 @@ public class LoginFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel errorLabel;
     private javax.swing.JButton loginButton;
     private javax.swing.JPasswordField passwordInput;
     private javax.swing.JLabel passwordLabel;
