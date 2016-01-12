@@ -3,12 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Pawel/Documents/NetBeansProjects/SMS/src/pjatk/byt/sms/db/model/User.java</file>
-            <file>file:/C:/Users/Pawel/Documents/NetBeansProjects/SMS/src/pjatk/byt/sms/Main.java</file>
-            <file>file:/C:/Users/Pawel/Documents/NetBeansProjects/SMS/src/pjatk/byt/sms/db/DBManager.java</file>
+            <file>file:/C:/Users/Pawel/Documents/NetBeansProjects/SMS/src/pjatk/byt/sms/frame/SaleFrame.java</file>
+            <file>file:/C:/Users/Pawel/Documents/NetBeansProjects/SMS/src/pjatk/byt/sms/frame/CashierViewFrame.java</file>
+            <file>file:/C:/Users/Pawel/Documents/NetBeansProjects/SMS/src/pjatk/byt/sms/frame/OptionsFrame.java</file>
+            <file>file:/C:/Users/Pawel/Documents/NetBeansProjects/SMS/src/pjatk/byt/sms/frame/LogoutFrame.java</file>
             <file>file:/C:/Users/Pawel/Documents/NetBeansProjects/SMS/src/pjatk/byt/sms/frame/LoginFrame.java</file>
+            <file>file:/C:/Users/Pawel/Documents/NetBeansProjects/SMS/src/pjatk/byt/sms/frame/AddProducts.java</file>
             <file>file:/C:/Users/Pawel/Documents/NetBeansProjects/SMS/src/pjatk/byt/sms/frame/ManagerViewFrame.java</file>
-            <file>file:/C:/Users/Pawel/Documents/NetBeansProjects/SMS/src/pjatk/byt/sms/db/dao/UserDao.java</file>
+            <file>file:/C:/Users/Pawel/Documents/NetBeansProjects/SMS/src/pjatk/byt/sms/frame/FirstLoginPasswordChange.java</file>
+            <file>file:/C:/Users/Pawel/Documents/NetBeansProjects/SMS/src/pjatk/byt/sms/frame/ProductListFrame.java</file>
         </group>
     </open-files>
 </project-private>

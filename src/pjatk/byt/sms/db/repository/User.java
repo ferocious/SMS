@@ -1,5 +1,5 @@
 
-package pjatk.byt.sms.db.model;
+package pjatk.byt.sms.db.repository;
 
 
 public class User {
@@ -7,6 +7,8 @@ public class User {
     private String user;
     private String name;
     private String role;
+    private Boolean loginFlag;
+    private String password;
 
     public Long getUserID() {
         return userID;
@@ -40,5 +42,20 @@ public class User {
         this.role = role;
     }
     
+    public void setLoginFlag(boolean loginFlag) {
+        this.loginFlag = loginFlag;
+    }
+    
+    public Boolean getLoginFLag() {
+        return loginFlag;
+    }
+    
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+    public String getPassword() {
+        return password;
+    }
     
 }

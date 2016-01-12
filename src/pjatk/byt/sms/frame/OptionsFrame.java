@@ -5,13 +5,16 @@
  */
 package pjatk.byt.sms.frame;
 
-
-public class SaleFrame extends javax.swing.JFrame {
+/**
+ *
+ * @author Pawel
+ */
+public class OptionsFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form Sprzedaz
+     * Creates new form OptionsFrame
      */
-    public SaleFrame() {
+    public OptionsFrame() {
         initComponents();
     }
 
@@ -29,14 +32,14 @@ public class SaleFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMaximumSize(new java.awt.Dimension(700, 450));
         setPreferredSize(new java.awt.Dimension(700, 450));
         getContentPane().setLayout(null);
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Sprzedaż towaru");
+        jLabel1.setText("Opcje");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(110, 30, 145, 14);
+        jLabel1.setBounds(147, 26, 60, 14);
 
         jButton1.setText("Powrót");
         jButton1.setMaximumSize(new java.awt.Dimension(107, 23));
@@ -48,12 +51,12 @@ public class SaleFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(550, 300, 107, 38);
+        jButton1.setBounds(540, 320, 107, 37);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/backgroundFrame.png"))); // NOI18N
         jLabel2.setMaximumSize(new java.awt.Dimension(836, 449));
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(-110, -40, 836, 449);
+        jLabel2.setBounds(-150, -10, 836, 449);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -64,7 +67,40 @@ public class SaleFrame extends javax.swing.JFrame {
         new ManagerViewFrame().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(OptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(OptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(OptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(OptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
 
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new OptionsFrame().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

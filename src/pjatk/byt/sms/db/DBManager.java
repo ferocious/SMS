@@ -4,14 +4,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
+
 public class DBManager {
 
     private static DBManager instance;
 
     private DBManager() {
         try {
-            // The newInstance() call is a work around for some
-            // broken Java implementations
+            // rejestruje sterownik mysql
+           
 
             Class.forName("com.mysql.jdbc.Driver").newInstance();
         } catch (Exception ex) {
@@ -27,6 +29,7 @@ public class DBManager {
         return instance;
     }
 
+    //metoda zwracajaca połączenie do bazy danych
     public Connection getConnection() {
         try {
             return DriverManager.getConnection("jdbc:mysql://localhost/sys?"
